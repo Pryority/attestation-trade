@@ -8,12 +8,11 @@ export const AttestForm = styled.form`
 
 export const FormRow = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  padding: 8px 0px;
-  gap: 24px;
-  width: 672px;
+  align-items: flex-start;
+  padding: 12px 0px;
+  width: 100%;
   height: 48px;
 `
 
@@ -21,8 +20,14 @@ export const FormLabel = styled.div`
   font-family: 'Rubik';
   font-style: normal;
   font-weight: 500;
-  margin: 0;
-  width: 192px;
-  height: 24px;
-  text-align: right;
+  text-align: left;
+  color: #b0acac;
+  margin-bottom: 8px;
+`
+
+export const StyledNonBreakingSpace = styled.span`
+  ::before {
+    color: #b0acac;
+    content: '\u00A0';
+  }
 `

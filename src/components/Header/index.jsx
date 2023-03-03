@@ -6,7 +6,7 @@ import styled from 'styled-components'
 import { ConnectButton } from '@rainbow-me/rainbowkit'
 
 const Nav = styled.nav`
-  background: #FFFFFF;
+  background: #1e1e1e;
   box-shadow: 0px 6px 8px -6px rgba(20, 23, 26, 0.06), 0px 8px 16px -6px rgba(20, 23, 26, 0.04);
   height: 72px;
   display: flex;
@@ -38,7 +38,7 @@ const Title = styled.h1`
   letter-spacing: .1rem;
 `
 const TitleAccent = styled.span`
-  color: black;
+  color: #c0b9b9;
   font-weight: 400;
 `
 
@@ -49,10 +49,10 @@ const Link = styled.a`
   font-weight: 500;
   font-size: 14px;
   line-height: 20px;
-  color: #68778D;
+  color: #b0acac;
 
   ${({ active }) => active && `
-    color: #202327;
+    color: #f2e6e6;
     border-bottom: 3px solid #FF0420;
     border-radius: 100px 100px 0px 0px;
   `}

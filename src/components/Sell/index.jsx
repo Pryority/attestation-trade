@@ -7,10 +7,19 @@ export const Sell = () => {
     width: 100%;
     height: 100vh;
     padding: 16px 20px;
+    position: relative;
   `
+
+  const Title = styled.h2`
+  color: #711f25;
+  text-align: right;
+  display: flex;
+  justify-content: end;
+  margin-right: 48px;
+`
   return (
     <Card>
-      <h2 style={{ color: '#711f25' }}>SELL</h2>
+      <Title>SELL</Title>
     </Card>
   )
 }

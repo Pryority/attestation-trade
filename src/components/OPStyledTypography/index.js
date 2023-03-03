@@ -15,11 +15,11 @@ export const H1Thin = styled(H1)`
 
 export const H2 = styled.h2`
     font-family: 'Rubik';
-    font-style: italic;
     font-weight: 700;
     font-size: 24px;
     line-height: 32px;
-    color: #202327;
+    color: #ffffff;
+    text-transform: capitalize;
 `
 
 export const H2Thin = styled(H2)`

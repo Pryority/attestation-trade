@@ -6,7 +6,7 @@ export const TextInput = styled.input`
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 0px 16px;
+  padding: 8px 16px;
   
   height: 48px;
   width: 456px;

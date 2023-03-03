@@ -10,7 +10,7 @@ import {
 import { AttestationStationAddress } from '../../constants/addresses'
 import AttestationStationABI from '../../constants/abi.json'
 
-import { AttestForm, FormRow, FormLabel } from '../StyledFormComponents'
+import { AttestForm, FormRow, FormLabel, StyledNonBreakingSpace } from '../StyledFormComponents'
 import Tooltip from '../Tooltip'
 import { H2 } from '../OPStyledTypography'
 import { TextInput } from '../OPStyledTextInput'
@@ -24,9 +24,9 @@ import { PrimaryButton } from '../OPStyledButton'
 const FormButton = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
   padding: 28px 0px 0px;
-  width: 672px;
+  width: 100%;
 `
 
 const HashedKey = styled.textarea`
@@ -56,7 +56,7 @@ const Card = styled.article`
   flex-direction: column;
   align-items: center;
   padding: 16px 20px;
-  background-color: #FFFFFF;
+  background-color: #1e1e1e;
   box-shadow: 0px 0px 8px -4px rgba(20, 23, 26, 0.12), 0px 4px 16px -1px rgba(20, 23, 26, 0.08);
   border-radius: 16px;
 `
@@ -141,7 +141,7 @@ const NewAttestation = () => {
 
   return (
     <Card>
-      <H2>New call</H2>
+      <H2>MAKE A CALL</H2>
       <AttestForm
         onSubmit={(e) => {
           e.preventDefault()
@@ -164,7 +164,7 @@ const NewAttestation = () => {
 
             <FormRow>
               <FormLabel>
-                Call key&nbsp;
+                Call key<StyledNonBreakingSpace/>
                 <Tooltip>
                   <ul>
                     <li>
@@ -190,7 +190,7 @@ const NewAttestation = () => {
                     setHashedKey('')
                   }
                 }}
-                placeholder="Enter a call (e.g. ETH.1600.long.045)"
+                placeholder="Enter a call (e.g. ETH.long.1600)"
                 value={key}
                 valid={isKeyValid}
               />
@@ -225,7 +225,7 @@ const NewAttestation = () => {
             }
             <FormRow>
               <FormLabel>
-                Attestation value&nbsp;
+                Attestation value<StyledNonBreakingSpace/>;
                 <Tooltip>
                   <ul>
                     <li>
@@ -239,7 +239,7 @@ const NewAttestation = () => {
               </FormLabel>
               <TextInput
                 type="text"
-                placeholder="Attestation value"
+                placeholder="Amount of Ether (e.g. 5)"
                 onChange={(e) => setVal(e.target.value)}
                 value={val}
                 valid={isValValid}
