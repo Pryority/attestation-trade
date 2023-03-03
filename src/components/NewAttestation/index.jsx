@@ -170,7 +170,7 @@ const NewAttestation = () => {
                     setHashedKey('')
                   }
                 }}
-                placeholder="Enter a call"
+                placeholder="Enter a call key"
                 value={key}
                 valid={isKeyValid}
               />
@@ -205,7 +205,7 @@ const NewAttestation = () => {
             }
             <FormRow>
               <FormLabel>
-                Attestation value<StyledNonBreakingSpace/>
+                Call value<StyledNonBreakingSpace/>
                 <Tooltip>
                   <ul style={{ listStyle: 'none' }}>
                     <li>
@@ -219,7 +219,7 @@ const NewAttestation = () => {
               </FormLabel>
               <TextInput
                 type="text"
-                placeholder="Amount of Ether (e.g. 5)"
+                placeholder="Enter a call value"
                 onChange={(e) => setVal(e.target.value)}
                 value={val}
                 valid={isValValid}
@@ -227,7 +227,7 @@ const NewAttestation = () => {
             </FormRow>
             <FormButton>
               <PrimaryButton disabled={!write || isLoading || !(isAboutValid && isKeyValid && isValValid)}>
-                {isLoading ? 'Making attestion' : 'Make attestation'}
+                {isLoading ? 'Attesting' : 'Attest'}
               </PrimaryButton>
             </FormButton>
             {isSuccess && (
