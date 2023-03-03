@@ -90,7 +90,7 @@ const Header = ({ activeContent, setActiveContent }) => (
   <Nav>
     <Left>
       <Title>
-        ATTESTATIONSTATION <TitleAccent>TRADE</TitleAccent>
+        ATTESTATION<TitleAccent>TRADE</TitleAccent>
       </Title>
     </Left>
 
