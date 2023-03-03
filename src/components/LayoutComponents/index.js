@@ -34,6 +34,7 @@ export const Card = styled.article`
   background-color: #1e1e1e;
   box-shadow: 0px 0px 8px -4px rgba(20, 23, 26, 0.12), 0px 4px 16px -1px rgba(20, 23, 26, 0.08);
   border-radius: 16px;
+  color: #fff;
 
   @media screen and (max-width: 600px) {
     padding: 10px 16px;
