@@ -2,10 +2,8 @@
 import React from 'react'
 import { Wrapper } from '../Wrapper'
 
-const Content = (props) => {
-  return (
-    <Wrapper activeContent={props.activeContent} />
-  )
-}
+const Content = (props) => (
+  <Wrapper activeContent={props.activeContent} />
+)
 
 export default Content

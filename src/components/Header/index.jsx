@@ -59,43 +59,40 @@ const Link = styled.a`
   `}
 `
 
-const Header = ({ activeContent, setActiveContent }) => {
-  return (
-    <Nav>
-      <Left>
-        <Title>
-          ATTESTATIONSTATION <TitleAccent>TRADE</TitleAccent>
-        </Title>
-      </Left>
+const Header = ({ activeContent, setActiveContent }) => (
+  <Nav>
+    <Left>
+      <Title>
+        ATTESTATIONSTATION <TitleAccent>TRADE</TitleAccent>
+      </Title>
+    </Left>
 
-      <Right>
-        <Link
-          active={activeContent === 0}
-          onClick={() => setActiveContent(0)}
-        >
-          New call
-        </Link>
-        <Link
-          active={activeContent === 1}
-          onClick={() => setActiveContent(1)}
-        >
-          Query calls
-        </Link>
-        <Link
-          active={activeContent === 2}
-          onClick={() => setActiveContent(2)}
-        >
-          About
-        </Link>
-        <ConnectButton
-          accountStatus="avatar"
-          chainStatus="icon"
-          showBalance={false}
-        />
-      </Right>
-    </Nav>
-  )
-}
+    <Right>
+      <Link
+        active={activeContent === 0}
+        onClick={() => setActiveContent(0)}
+      >
+        New call
+      </Link>
+      <Link
+        active={activeContent === 1}
+        onClick={() => setActiveContent(1)}
+      >
+        Query calls
+      </Link>
+      <Link
+        active={activeContent === 2}
+        onClick={() => setActiveContent(2)}
+      >
+        About
+      </Link>
+      <ConnectButton
+        accountStatus="avatar"
+        chainStatus="icon"
+        showBalance={false} />
+    </Right>
+  </Nav>
+)
 
 Header.propTypes = {
   activeContent: PropTypes.number.isRequired,

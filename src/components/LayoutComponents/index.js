@@ -40,20 +40,6 @@ export const Card = styled.article`
     border-radius: 8px;
   }
 `
-export const CallCard = styled.article`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 16px 20px;
-  background-color: #1e1e1e;
-  box-shadow: 0px 0px 8px -4px rgba(20, 23, 26, 0.12), 0px 4px 16px -1px rgba(20, 23, 26, 0.08);
-  border-radius: 16px;
-
-  @media screen and (max-width: 600px) {
-    padding: 10px 16px;
-    border-radius: 8px;
-  }
-`
 
 export const AboutCard = styled.article`
   display: flex;

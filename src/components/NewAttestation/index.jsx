@@ -15,7 +15,7 @@ import Tooltip from '../Tooltip'
 import { H2 } from '../OPStyledTypography'
 import { TextInput } from '../OPStyledTextInput'
 import { PrimaryButton } from '../OPStyledButton'
-import { CallCard } from '../LayoutComponents'
+import { Card } from '../LayoutComponents'
 // import { Select } from '../OPStyledSelect'
 
 // const AttestationTypeSelect = styled(Select)`
@@ -120,7 +120,7 @@ const NewAttestation = () => {
   })
 
   return (
-    <CallCard>
+    <Card>
       <H2>MAKE A CALL</H2>
       <AttestForm
         onSubmit={(e) => {
@@ -248,7 +248,7 @@ const NewAttestation = () => {
           </FeedbackMessage>
         )}
       </AttestForm>
-    </CallCard>
+    </Card>
   )
 }
 
