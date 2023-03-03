@@ -15,7 +15,7 @@ import Tooltip from '../Tooltip'
 import { H2 } from '../OPStyledTypography'
 import { TextInput } from '../OPStyledTextInput'
 import { PrimaryButton } from '../OPStyledButton'
-import { Card } from '../LayoutComponents'
+import { CallCard } from '../LayoutComponents'
 // import { Select } from '../OPStyledSelect'
 
 // const AttestationTypeSelect = styled(Select)`
@@ -47,9 +47,6 @@ const FeedbackMessage = styled.span`
 const NewAttestation = () => {
   const { chain } = useNetwork()
   const [etherscanBaseLink, setEtherscanBaseLink] = useState('')
-
-  // const [attestationType, setAttestationType] = useState('default')
-
   const [about, setAbout] = useState('')
   const [key, setKey] = useState('')
   const [hashedKey, setHashedKey] = useState('')
@@ -123,7 +120,7 @@ const NewAttestation = () => {
   })
 
   return (
-    <Card>
+    <CallCard>
       <H2>MAKE A CALL</H2>
       <AttestForm
         onSubmit={(e) => {
@@ -149,12 +146,12 @@ const NewAttestation = () => {
               <FormLabel>
                 Call key<StyledNonBreakingSpace/>
                 <Tooltip>
-                  <ul>
+                  <ul style={{ listStyle: 'none' }}>
                     <li>
-                      The key describes what the attestation is about.
+                      A key that describes the trade attestation
                     </li>
                     <li>
-                      Example: sbvegan.interface.used:bool
+                      Example: ETH.1600.long:bool
                     </li>
                   </ul>
                 </Tooltip>
@@ -173,7 +170,7 @@ const NewAttestation = () => {
                     setHashedKey('')
                   }
                 }}
-                placeholder="Enter a call (e.g. ETH.long.1600)"
+                placeholder="Enter a call"
                 value={key}
                 valid={isKeyValid}
               />
@@ -184,7 +181,7 @@ const NewAttestation = () => {
                   <FormLabel>
                     Hashed key&nbsp;
                     <Tooltip>
-                      <ul>
+                      <ul style={{ listStyle: 'none' }}>
                         <li>
                           The key in the smart contract is limited to 32 bytes.
                         </li>
@@ -208,14 +205,14 @@ const NewAttestation = () => {
             }
             <FormRow>
               <FormLabel>
-                Attestation value<StyledNonBreakingSpace/>;
+                Attestation value<StyledNonBreakingSpace/>
                 <Tooltip>
-                  <ul>
+                  <ul style={{ listStyle: 'none' }}>
                     <li>
                       The value that is associated with the key.
                     </li>
                     <li>
-                      Example: true
+                      {'Example: \'true\', \'340\', \'vitalik.eth\''}
                     </li>
                   </ul>
                 </Tooltip>
@@ -251,7 +248,7 @@ const NewAttestation = () => {
           </FeedbackMessage>
         )}
       </AttestForm>
-    </Card>
+    </CallCard>
   )
 }
 
