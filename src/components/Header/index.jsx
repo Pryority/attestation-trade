@@ -17,6 +17,17 @@ const Left = styled.div`
   flex-direction: row;
   align-items: center;
   padding: 0px 0px 0px 32px;
+
+  @media (max-width: 900px) {
+    width: 40%;
+  }
+  @media (max-width: 600px) {
+    display: none;
+    width: 30%;
+  }
+  @media (max-width: 380px) {
+    width: 25%;
+  }
 `
 
 const Right = styled.div`
@@ -25,7 +36,12 @@ const Right = styled.div`
   justify-content: flex-end;
   align-items: center;
   padding: 0px 32px 0px 0px;
-  gap: 32px;
+  justify-content: space-between;
+  width: 50%;
+  @media (max-width: 600px) {
+    width: 100%;
+    padding: 32px;
+  }
 `
 
 const Title = styled.h1`
@@ -34,6 +50,14 @@ const Title = styled.h1`
   font-weight: 700;
   color: rgb(255, 4, 32);
   letter-spacing: 0.1rem;
+
+  @media (max-width: 800px) {
+    font-size: medium;
+  }
+
+  @media (max-width: 600px) {
+    display: none;
+  }
 `
 
 const TitleAccent = styled.span`
@@ -49,6 +73,9 @@ const Link = styled.a`
   font-size: 14px;
   line-height: 20px;
   color: #b0acac;
+  @media (max-width: 800px) {
+    font-size: small;
+  }
 
   ${({ active }) =>
     active &&

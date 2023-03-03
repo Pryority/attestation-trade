@@ -9,18 +9,13 @@ import {
 } from 'wagmi'
 import { AttestationStationAddress } from '../../constants/addresses'
 import AttestationStationABI from '../../constants/abi.json'
-
+import { SwapWidget } from '@uniswap/widgets'
+import '@uniswap/widgets/fonts.css'
 import { AttestForm, FormRow, FormLabel, StyledNonBreakingSpace, FormButton } from '../StyledFormComponents'
 import Tooltip from '../Tooltip'
-import { H2 } from '../OPStyledTypography'
 import { TextInput } from '../OPStyledTextInput'
 import { PrimaryButton } from '../OPStyledButton'
 import { Card } from '../LayoutComponents'
-// import { Select } from '../OPStyledSelect'
-
-// const AttestationTypeSelect = styled(Select)`
-//   color: ${props => (props.value === 'default' ? '#8496AE' : 'inherit')}
-// `
 
 const HashedKey = styled.textarea`
   align-items: center;
@@ -41,7 +36,17 @@ const Link = styled.a`
 `
 
 const FeedbackMessage = styled.span`
+  margin-top: 8px;
   padding: 0px 36px;
+  color: #b0acac;
+`
+
+const Control = styled.div`
+  scale: 62%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100vh;
 `
 
 const NewAttestation = () => {
@@ -120,8 +125,8 @@ const NewAttestation = () => {
   })
 
   return (
+    <Control>
     <Card>
-      <H2>MAKE A CALL</H2>
       <AttestForm
         onSubmit={(e) => {
           e.preventDefault()
@@ -249,6 +254,17 @@ const NewAttestation = () => {
         )}
       </AttestForm>
     </Card>
+    <SwapWidget
+        width={500}
+        backgroundColor="#f0f0f0"
+        borderRadius={10}
+        borderColor="#ccc"
+        inputBorderColor="#ddd"
+        outputBorderColor="#ddd"
+        buttonColor="#0080ff"
+        buttonTextColor="#fff"
+      />
+    </Control>
   )
 }
 
