@@ -4,6 +4,9 @@ import styled from 'styled-components'
 import NewAttestation from '../NewAttestation'
 import ReadAttestation from '../ReadAttesatation'
 import About from '../About'
+import Wrapper from '../Wrapper'
+import { Buy } from '../Buy'
+import { Sell } from '../Sell'
 
 const Page = styled.div`
   display: flex;
@@ -23,7 +26,7 @@ const Section = styled.div`
 `
 
 const Content = (props) => {
-  const [content, setContent] = useState(<NewAttestation/>)
+  const [content, setContent] = useState(<Wrapper Buy={Buy} Sell={Sell} NewAttestation={NewAttestation}/>)
 
   useEffect(() => {
     switch (props.activeContent) {

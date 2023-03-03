@@ -15,8 +15,12 @@ import {
 } from 'wagmi'
 import { publicProvider } from 'wagmi/providers/public'
 
-import Content from './components/Content'
+// import Content from './components/Content'
 import Header from './components/Header'
+import { Buy } from './components/Buy'
+import { Sell } from './components/Sell'
+import NewAttestation from './components/NewAttestation'
+import Wrapper from './components/Wrapper'
 
 const AppWrapper = styled.div`
   background-color: #F1F4F9;
@@ -55,10 +59,11 @@ export default function App () {
             setActiveContent={setActiveContent}
           />
           <ContentWrapper>
-            <Content
+            {/* <Content
               activeContent={activeContent}
               setActiveContent={setActiveContent}
-            />
+            /> */}
+            <Wrapper Buy={<Buy/>} Sell={<Sell/>} NewAttestation={<NewAttestation/>}/>
           </ContentWrapper>
         </RainbowKitProvider>
       </WagmiConfig>

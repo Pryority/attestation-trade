@@ -15,11 +15,11 @@ import Tooltip from '../Tooltip'
 import { H2 } from '../OPStyledTypography'
 import { TextInput } from '../OPStyledTextInput'
 import { PrimaryButton } from '../OPStyledButton'
-import { Select } from '../OPStyledSelect'
+// import { Select } from '../OPStyledSelect'
 
-const AttestationTypeSelect = styled(Select)`
-  color: ${props => (props.value === 'default' ? '#8496AE' : 'inherit')}
-`
+// const AttestationTypeSelect = styled(Select)`
+//   color: ${props => (props.value === 'default' ? '#8496AE' : 'inherit')}
+// `
 
 const FormButton = styled.div`
   display: flex;
@@ -51,11 +51,21 @@ const FeedbackMessage = styled.span`
   padding: 0px 36px;
 `
 
+const Card = styled.article`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px 20px;
+  background-color: #FFFFFF;
+  box-shadow: 0px 0px 8px -4px rgba(20, 23, 26, 0.12), 0px 4px 16px -1px rgba(20, 23, 26, 0.08);
+  border-radius: 16px;
+`
+
 const NewAttestation = () => {
   const { chain } = useNetwork()
   const [etherscanBaseLink, setEtherscanBaseLink] = useState('')
 
-  const [attestationType, setAttestationType] = useState('default')
+  // const [attestationType, setAttestationType] = useState('default')
 
   const [about, setAbout] = useState('')
   const [key, setKey] = useState('')
@@ -130,34 +140,22 @@ const NewAttestation = () => {
   })
 
   return (
-    <>
-      <H2>New attestation</H2>
+    <Card>
+      <H2>New call</H2>
       <AttestForm
         onSubmit={(e) => {
           e.preventDefault()
           write?.()
         }}
       >
-        <FormRow>
-          <FormLabel>Attestation type</FormLabel>
-          <AttestationTypeSelect
-            value={attestationType}
-            onChange={(e) => setAttestationType(e.target.value)}
-          >
-            <option value="default" hidden>Select attestation type</option>
-            <option value="custom">Custom attestation</option>
-            <option value="soon" disabled>More schemas coming soon</option>
-          </AttestationTypeSelect>
-        </FormRow>
-        {attestationType === 'custom'
-          ? <>
+        <>
             <FormRow>
               <FormLabel>
-                Ethereum address
+                Token address
               </FormLabel>
               <TextInput
                 type="text"
-                placeholder="Who's this attestation about?"
+                placeholder="Which token are you trading?"
                 onChange={(e) => setAbout(e.target.value)}
                 value={about}
                 valid={isAboutValid}
@@ -166,7 +164,7 @@ const NewAttestation = () => {
 
             <FormRow>
               <FormLabel>
-                Attestation key&nbsp;
+                Call key&nbsp;
                 <Tooltip>
                   <ul>
                     <li>
@@ -192,7 +190,7 @@ const NewAttestation = () => {
                     setHashedKey('')
                   }
                 }}
-                placeholder="Attestation key"
+                placeholder="Enter a call (e.g. ETH.1600.long.045)"
                 value={key}
                 valid={isKeyValid}
               />
@@ -264,14 +262,13 @@ const NewAttestation = () => {
               </FeedbackMessage>
             )}
           </>
-          : <></>}
         {(isPrepareError || isError) && (
           <FeedbackMessage>
               Error: {(prepareError || error)?.message}
           </FeedbackMessage>
         )}
       </AttestForm>
-    </>
+    </Card>
   )
 }
 
