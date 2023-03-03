@@ -1,16 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import AboutAttestations from '../About'
-import Main from '../Main'
+
 import ReadAttestation from '../ReadAttesatation'
-import { Buy } from '../Buy'
-import NewAttestation from '../NewAttestation'
-import { Sell } from '../Sell'
+import { Main } from '../Main'
 
 export const Wrapper = ({ activeContent }) => {
   switch (activeContent) {
     case 0:
-      return <Main Buy={<Buy/>} Sell={<Sell/>} NewAttestation={<NewAttestation/>}/>
+      return <Main/>
     case 1:
       return <ReadAttestation />
     case 2:
