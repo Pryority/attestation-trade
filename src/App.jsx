@@ -24,7 +24,8 @@ const AppWrapper = styled.div`
 `
 
 const ContentWrapper = styled.div`
-  height: calc(100vh - 72px);
+  height: 100vh;
+
 `
 
 const { chains, provider, webSocketProvider } = configureChains(

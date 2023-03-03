@@ -1,12 +1,13 @@
 import React from 'react'
 
 import styled from 'styled-components'
-import { Page, Section } from '../LayoutComponents'
+import { AboutCard, Page } from '../LayoutComponents'
 
 import { H2, Body16, Body16Bold } from '../OPStyledTypography'
 
 const SubSection = styled(Body16Bold)`
   margin: 0;
+  color: #b0acac;
 `
 
 const Link = styled.a`
@@ -16,15 +17,12 @@ const Bold = styled.span`
   font-weight: bold;
 `
 
-const Container = styled.div`
-  padding: 0px 40px;
-`
-
 const AboutAttestations = () => {
   return (
-    <Page>
-        <Container>
-      <Section>
+
+          <Page>
+      <AboutCard>
+          <div style={{ width: '95%' }}>
           <H2>About</H2>
           <SubSection>What&apos;s the AttestationStation?</SubSection>
           <Body16>
@@ -64,8 +62,8 @@ const AboutAttestations = () => {
                 Official Optimism Documentation
             </Link>
           </Body16>
-      </Section>
-        </Container>
+          </div>
+      </AboutCard>
     </Page>
   )
 }

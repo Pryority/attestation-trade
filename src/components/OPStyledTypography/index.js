@@ -134,7 +134,7 @@ export const Body16 = styled.p`
     font-size: 16px;
     line-height: 24px;
     /* 🌤️ $neutral/900 (Text) */
-    color: #202327;
+    color: #f3f6f4;
 `
 
 export const Body16Medium = styled(Body16)`

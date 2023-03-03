@@ -15,6 +15,7 @@ import Tooltip from '../Tooltip'
 import { H2 } from '../OPStyledTypography'
 import { TextInput } from '../OPStyledTextInput'
 import { PrimaryButton } from '../OPStyledButton'
+import { Card } from '../LayoutComponents'
 // import { Select } from '../OPStyledSelect'
 
 // const AttestationTypeSelect = styled(Select)`
@@ -41,16 +42,6 @@ const Link = styled.a`
 
 const FeedbackMessage = styled.span`
   padding: 0px 36px;
-`
-
-const Card = styled.article`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 16px 20px;
-  background-color: #1e1e1e;
-  box-shadow: 0px 0px 8px -4px rgba(20, 23, 26, 0.12), 0px 4px 16px -1px rgba(20, 23, 26, 0.08);
-  border-radius: 16px;
 `
 
 const NewAttestation = () => {

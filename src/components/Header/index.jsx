@@ -1,8 +1,6 @@
-/* eslint-disable react/prop-types */
 import React from 'react'
-
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
-
 import { ConnectButton } from '@rainbow-me/rainbowkit'
 
 const Nav = styled.nav`
@@ -35,8 +33,9 @@ const Title = styled.h1`
   font-style: italic;
   font-weight: 700;
   color: rgb(255, 4, 32);
-  letter-spacing: .1rem;
+  letter-spacing: 0.1rem;
 `
+
 const TitleAccent = styled.span`
   color: #c0b9b9;
   font-weight: 400;
@@ -51,36 +50,40 @@ const Link = styled.a`
   line-height: 20px;
   color: #b0acac;
 
-  ${({ active }) => active && `
+  ${({ active }) =>
+    active &&
+    `
     color: #f2e6e6;
     border-bottom: 3px solid #FF0420;
     border-radius: 100px 100px 0px 0px;
   `}
 `
 
-const Header = (props) => {
+const Header = ({ activeContent, setActiveContent }) => {
   return (
     <Nav>
       <Left>
-        <Title>ATTESTATIONSTATION <TitleAccent>TRADE</TitleAccent></Title>
+        <Title>
+          ATTESTATIONSTATION <TitleAccent>TRADE</TitleAccent>
+        </Title>
       </Left>
 
       <Right>
         <Link
-          active={props.activeContent === 0}
-          onClick={() => props.setActiveContent(0)}
+          active={activeContent === 0}
+          onClick={() => setActiveContent(0)}
         >
           New call
         </Link>
         <Link
-          active={props.activeContent === 1}
-          onClick={() => props.setActiveContent(1)}
+          active={activeContent === 1}
+          onClick={() => setActiveContent(1)}
         >
           Query calls
         </Link>
         <Link
-          active={props.activeContent === 2}
-          onClick={() => props.setActiveContent(2)}
+          active={activeContent === 2}
+          onClick={() => setActiveContent(2)}
         >
           About
         </Link>
@@ -92,6 +95,11 @@ const Header = (props) => {
       </Right>
     </Nav>
   )
+}
+
+Header.propTypes = {
+  activeContent: PropTypes.number.isRequired,
+  setActiveContent: PropTypes.func.isRequired
 }
 
 export default Header

@@ -4,10 +4,10 @@ import styled from 'styled-components'
 import { useContractRead } from 'wagmi'
 import { AttestationStationAddress } from '../../constants/addresses'
 import AttestationStationABI from '../../constants/abi.json'
-import { Page, Section } from '../LayoutComponents'
 import { AttestForm, FormRow, FormLabel } from '../StyledFormComponents'
 import { TextInput } from '../OPStyledTextInput'
 import { H2 } from '../OPStyledTypography'
+import { Card, Page } from '../LayoutComponents'
 
 const Textarea = styled.textarea`
   align-items: center;
@@ -53,79 +53,153 @@ const ReadAttestation = () => {
 
   return (
     <Page>
-    <Section>
-      <H2>Read attestation</H2>
-      <AttestForm>
-        <FormRow>
-          <FormLabel>Creator&apos;s address</FormLabel>
-          <TextInput
-            type="text"
-            placeholder="Who created this attestation?"
-            onChange={(e) => setCreator(e.target.value)}
-            value={creator}
-            valid={isCreatorValid}
-          />
-        </FormRow>
+      <Card>
+        <H2>Read attestation</H2>
+        <AttestForm>
+          <FormRow>
+            <FormLabel>Creator&apos;s address</FormLabel>
+            <TextInput
+              type="text"
+              placeholder="Who created this attestation?"
+              onChange={(e) => setCreator(e.target.value)}
+              value={creator}
+              valid={isCreatorValid}
+            />
+          </FormRow>
 
-        <FormRow>
-          <FormLabel>Subject&apos;s address</FormLabel>
-          <TextInput
-            type="text"
-            placeholder="Who's this attestation about?"
-            onChange={(e) => setAbout(e.target.value)}
-            value={about}
-            valid={isAboutValid}
-          />
-        </FormRow>
+          <FormRow>
+            <FormLabel>Subject&apos;s address</FormLabel>
+            <TextInput
+              type="text"
+              placeholder="Who's this attestation about?"
+              onChange={(e) => setAbout(e.target.value)}
+              value={about}
+              valid={isAboutValid}
+            />
+          </FormRow>
 
-        <FormRow>
-          <FormLabel>Attestation key</FormLabel>
-          <TextInput
-            type="text"
-            placeholder="Attestation key"
-            onChange={(e) => {
-              const key = e.target.value
-              if (key.length > 31) {
-                setKey(key)
-                setBytes32Key(key)
-              } else {
-                setKey(key)
-                setBytes32Key(ethers.utils.formatBytes32String(key))
-              }
-            }}
-            value={key}
-            valid={isKeyValid}
-          />
-        </FormRow>
-        {data
-          ? <>
-              <FormRow>
-                <FormLabel>Value</FormLabel>
-                <Textarea
-                  readOnly
-                  value={data}
-                />
-              </FormRow>
+          <FormRow>
+            <FormLabel>Attestation key</FormLabel>
+            <TextInput
+              type="text"
+              placeholder="Attestation key"
+              onChange={(e) => {
+                const key = e.target.value
+                if (key.length > 31) {
+                  setKey(key)
+                  setBytes32Key(key)
+                } else {
+                  setKey(key)
+                  setBytes32Key(ethers.utils.formatBytes32String(key))
+                }
+              }}
+              value={key}
+              valid={isKeyValid}
+            />
+          </FormRow>
+          {data
+            ? <>
+                <FormRow>
+                  <FormLabel>Value</FormLabel>
+                  <Textarea
+                    readOnly
+                    value={data}
+                  />
+                </FormRow>
 
-              <FormRow>
-                <FormLabel>String formatted value</FormLabel>
-                <Textarea
-                  readOnly
-                  value={data ? ethers.utils.toUtf8String(data) : ''}
-                />
-              </FormRow>
-          </>
-          : <></>
-        }
-        {(isError) && (
-          <div>
-            <FormLabel>
-              Error: {(error)?.message}
-            </FormLabel>
-          </div>
-        )}
-      </AttestForm>
-      </Section>
+                <FormRow>
+                  <FormLabel>String formatted value</FormLabel>
+                  <Textarea
+                    readOnly
+                    value={data ? ethers.utils.toUtf8String(data) : ''}
+                  />
+                </FormRow>
+            </>
+            : <></>
+          }
+          {(isError) && (
+            <div>
+              <FormLabel>
+                Error: {(error)?.message}
+              </FormLabel>
+            </div>
+          )}
+        </AttestForm>
+      </Card>
+      <span style={{ height: '8px' }}/>
+      <Card>
+        <H2>Custom Query</H2>
+        <AttestForm>
+          <FormRow>
+            <FormLabel>Creator&apos;s address</FormLabel>
+            <TextInput
+              type="text"
+              placeholder="Who created this attestation?"
+              onChange={(e) => setCreator(e.target.value)}
+              value={creator}
+              valid={isCreatorValid}
+            />
+          </FormRow>
+
+          <FormRow>
+            <FormLabel>Subject&apos;s address</FormLabel>
+            <TextInput
+              type="text"
+              placeholder="Who's this attestation about?"
+              onChange={(e) => setAbout(e.target.value)}
+              value={about}
+              valid={isAboutValid}
+            />
+          </FormRow>
+
+          <FormRow>
+            <FormLabel>Attestation key</FormLabel>
+            <TextInput
+              type="text"
+              placeholder="Attestation key"
+              onChange={(e) => {
+                const key = e.target.value
+                if (key.length > 31) {
+                  setKey(key)
+                  setBytes32Key(key)
+                } else {
+                  setKey(key)
+                  setBytes32Key(ethers.utils.formatBytes32String(key))
+                }
+              }}
+              value={key}
+              valid={isKeyValid}
+            />
+          </FormRow>
+          {data
+            ? <>
+                <FormRow>
+                  <FormLabel>Value</FormLabel>
+                  <Textarea
+                    readOnly
+                    value={data}
+                  />
+                </FormRow>
+
+                <FormRow>
+                  <FormLabel>String formatted value</FormLabel>
+                  <Textarea
+                    readOnly
+                    value={data ? ethers.utils.toUtf8String(data) : ''}
+                  />
+                </FormRow>
+            </>
+            : <></>
+          }
+          {(isError) && (
+            <div>
+              <FormLabel>
+                Error: {(error)?.message}
+              </FormLabel>
+            </div>
+          )}
+        </AttestForm>
+      </Card>
     </Page>
   )
 }
