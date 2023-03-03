@@ -1,11 +1,12 @@
-# Attestation Station Interface
-An open source interface for Optimism's AttestationStation -- a data primative for making arbitrary attestations about Ethereum addresses -- [OP Labs' Official Documentation](https://community.optimism.io/docs/governance/attestation-station/#).
+# Attestation Trade
+
+Experimenting with the open source interface for Optimism's AttestationStation -- a data primative for making arbitrary attestations about Ethereum addresses -- [OP Labs' Official Documentation](https://community.optimism.io/docs/governance/attestation-station/#).
 
 [![attestationstation-interface](./attestationstation-interface.png)](https://youtu.be/rBesMSd0GzM)
 
 ## Key Features
 
-- Make attestations to Optimism's AttestationStation
+- Make attestations about future trades (maybe current and past trades too?) to Optimism's AttestationStation
 - Read raw hex and string formatted attestation values
 
 ## Run Locally

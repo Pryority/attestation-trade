@@ -9,8 +9,8 @@ import {
 } from 'wagmi'
 import { AttestationStationAddress } from '../../constants/addresses'
 import AttestationStationABI from '../../constants/abi.json'
-import { SwapWidget } from '@uniswap/widgets'
-import '@uniswap/widgets/fonts.css'
+// import { SwapWidget } from '@uniswap/widgets'
+// import '@uniswap/widgets/fonts.css'
 import { AttestForm, FormRow, FormLabel, StyledNonBreakingSpace, FormButton } from '../StyledFormComponents'
 import Tooltip from '../Tooltip'
 import { TextInput } from '../OPStyledTextInput'
@@ -254,7 +254,7 @@ const NewAttestation = () => {
         )}
       </AttestForm>
     </Card>
-    <SwapWidget
+    {/* <SwapWidget
         width={500}
         backgroundColor="#f0f0f0"
         borderRadius={10}
@@ -263,7 +263,7 @@ const NewAttestation = () => {
         outputBorderColor="#ddd"
         buttonColor="#0080ff"
         buttonTextColor="#fff"
-      />
+      /> */}
     </Control>
   )
 }
