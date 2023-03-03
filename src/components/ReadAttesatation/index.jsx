@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { useContractRead } from 'wagmi'
 import { AttestationStationAddress } from '../../constants/addresses'
 import AttestationStationABI from '../../constants/abi.json'
-
+import { Page, Section } from '../LayoutComponents'
 import { AttestForm, FormRow, FormLabel } from '../StyledFormComponents'
 import { TextInput } from '../OPStyledTextInput'
 import { H2 } from '../OPStyledTypography'
@@ -52,7 +52,8 @@ const ReadAttestation = () => {
   }, [creator, about, key, isError, error])
 
   return (
-    <>
+    <Page>
+    <Section>
       <H2>Read attestation</H2>
       <AttestForm>
         <FormRow>
@@ -124,7 +125,8 @@ const ReadAttestation = () => {
           </div>
         )}
       </AttestForm>
-    </>
+      </Section>
+    </Page>
   )
 }
 

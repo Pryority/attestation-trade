@@ -1,21 +1,27 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import '../../styles/Wrapper.css'
+import AboutAttestations from '../About'
+import Main from '../Main'
+import ReadAttestation from '../ReadAttesatation'
+import { Buy } from '../Buy'
+import NewAttestation from '../NewAttestation'
+import { Sell } from '../Sell'
 
-function Wrapper ({ Buy, Sell, NewAttestation }) {
-  return (
-    <div className="wrapper">
-      <div className="half-screen left">{Buy}</div>
-      <div className="half-screen right">{Sell}</div>
-      <div className="centered">{NewAttestation}</div>
-    </div>
-  )
+export const Wrapper = ({ activeContent }) => {
+  switch (activeContent) {
+    case 0:
+      return <Main Buy={<Buy/>} Sell={<Sell/>} NewAttestation={<NewAttestation/>}/>
+    case 1:
+      return <ReadAttestation />
+    case 2:
+      return <AboutAttestations />
+    default:
+      return <div>How&apos;d you get here???</div>
+  }
 }
 
 Wrapper.propTypes = {
-  Buy: PropTypes.element.isRequired,
-  Sell: PropTypes.element.isRequired,
-  NewAttestation: PropTypes.element.isRequired
+  activeContent: PropTypes.shape({
+    Buy: PropTypes.any
+  })
 }
-
-export default Wrapper

@@ -10,7 +10,7 @@ import {
 import { AttestationStationAddress } from '../../constants/addresses'
 import AttestationStationABI from '../../constants/abi.json'
 
-import { AttestForm, FormRow, FormLabel, StyledNonBreakingSpace } from '../StyledFormComponents'
+import { AttestForm, FormRow, FormLabel, StyledNonBreakingSpace, FormButton } from '../StyledFormComponents'
 import Tooltip from '../Tooltip'
 import { H2 } from '../OPStyledTypography'
 import { TextInput } from '../OPStyledTextInput'
@@ -20,14 +20,6 @@ import { PrimaryButton } from '../OPStyledButton'
 // const AttestationTypeSelect = styled(Select)`
 //   color: ${props => (props.value === 'default' ? '#8496AE' : 'inherit')}
 // `
-
-const FormButton = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 28px 0px 0px;
-  width: 100%;
-`
 
 const HashedKey = styled.textarea`
   align-items: center;

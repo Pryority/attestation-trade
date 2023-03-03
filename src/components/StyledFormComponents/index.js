@@ -31,3 +31,11 @@ export const StyledNonBreakingSpace = styled.span`
     content: '\u00A0';
   }
 `
+
+export const FormButton = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 28px 0px 0px;
+  width: 100%;
+`
