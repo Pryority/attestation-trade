@@ -49,7 +49,7 @@ const Control = styled.div`
   height: 100vh;
 `
 
-const NewAttestation = () => {
+export const NewAttestation = () => {
   const { chain } = useNetwork()
   const [etherscanBaseLink, setEtherscanBaseLink] = useState('')
   const [about, setAbout] = useState('')
